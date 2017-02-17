@@ -1,0 +1,106 @@
+.modal-container {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+}
+
+.display-none {
+    display: none;
+}
+
+.display-block {
+    display: block;
+}
+
+.modal-window {
+    display: block;
+    margin: 15% auto;
+    width: 43%;
+    height: 218px;
+    background-color: white;
+    border-radius: 8px;
+    border: solid 4px #ff3920;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.window-header {
+    position: relative;
+    background-color: #ff3920;
+    font-size: 23px;
+    font-family: "Angsana New", serif;
+    color: white;
+    padding: 5px 0 5px 10px;
+}
+
+.window-content {
+    position: relative;
+    margin: 15px 0 15px 15px;
+}
+
+.modal-input{
+    position: absolute;
+    left: 0;
+    border: solid 2px #ff3920;
+    font-size: 24px;
+    padding: 3px 5px;
+    margin-left: 110px;
+    margin-top: -3px;
+    width: 60%;
+    box-shadow: -3px 3px 10px 0 rgba(0, 0, 0, 0.7), 1px -1px 15px 0 rgba(0, 0, 0, 0.2);
+}
+
+.modal-input:focus {
+    border: 3px solid #ff3920;
+    box-shadow: -3px 3px 10px 0 rgba(255, 57, 32, 0.7), 1px -1px 15px 0 rgba(255, 57, 32, 0.2);
+}
+
+.modal-entry-btn {
+    position: absolute;
+    right: 3%;
+    font-size: 20px;
+    color: black;
+    background-color: white;
+    border: solid 2px #ff3920;
+    padding: 5px 15px;
+    box-shadow: -2px 2px 10px 0 rgba(0, 0, 0, 0.7);
+}
+
+.modal-entry-btn:hover {
+    border: none;
+    background-color: #ff3920;
+    color: white;
+    cursor: pointer;
+}
+
+.modal-close {
+    display: inline-block;
+    float: right;
+    font-size: 40px;
+    font-weight: bold;
+    margin-top: -20px;
+    margin-right: 5px;
+}
+
+.modal-close:hover, .modal-close:focus {
+    color: black;
+    cursor: pointer;
+}
+
+.modal-label {
+    position: relative;
+    display: block;
+    height: 35px;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.err-span {
+    position: relative;
+    top: 5px;
+    color: red;
+    margin-top: 3px;
+}

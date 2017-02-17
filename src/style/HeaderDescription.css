@@ -1,0 +1,52 @@
+.header-app-description {
+    position: relative;
+    width: auto;
+    height: 350px;
+    border-bottom: solid 2px black;
+    background-image: url("../images/header-background.jpg");
+    background-size: cover;
+}
+
+.header-arrow {
+    position: absolute;
+    width: 7%;
+    color: white;
+    font-size: 100px;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+    padding: 20px 0;
+}
+
+.header-arrow:hover {
+    background-color: rgba(202, 191, 182, 0.4);
+    cursor: pointer;
+}
+
+.arrow-left {
+    left: 10px;
+}
+
+.arrow-right {
+    right: 10px;
+}
+
+.header-slider {
+    position: absolute;
+    width: 60%;
+    height: 80%;
+    background-color: rgba(156, 146, 138, 0.68);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.slider-list {
+    list-style: none;
+    text-align: center;
+    padding: 0;
+}
+
+.slider-list li {
+    display: none;
+}
