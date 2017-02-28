@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
+import '../style/Composition.css';
 
-export default class About extends Component {
+export default class CompositionSample extends Component {
     render() {
         return <div>
-            About
+
         </div>
     }
 }

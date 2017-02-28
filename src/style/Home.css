@@ -1,0 +1,21 @@
+.home-container {
+
+}
+
+.popular-compositions-title {
+    text-align: center;
+    border-top: solid darkred 2px;
+    border-bottom: solid darkred 2px;
+    color: darkred;
+    margin: 20px auto;
+    font-size: 28px;
+    padding: 10px 0;
+    display: block;
+    width: 20%;
+}
+
+.popular-compositions-container {
+    border: solid black 2px;
+    margin: 0 auto;
+    width: 70%;
+}

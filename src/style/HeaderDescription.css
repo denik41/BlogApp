@@ -33,6 +33,9 @@
 
 .header-slider {
     position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 60%;
     height: 80%;
     background-color: rgba(156, 146, 138, 0.68);
@@ -41,12 +44,9 @@
     transform: translate(-50%, -50%);
 }
 
-.slider-list {
-    list-style: none;
-    text-align: center;
-    padding: 0;
-}
-
-.slider-list li {
+.slider-content {
     display: none;
+    text-align: center;
+    font-size: 30px;
+    color: black;
 }

@@ -19,20 +19,20 @@ nav {
     margin-right: 10px;
 }
 
-.links-container li a {
+.nav-link {
     display: block;
     text-align: center;
     font-size: 24px;
     text-decoration: none;
     color: #0f0f0f;
-    padding: 10px 3px 7px;
+    padding: 10px 4px 7px;
     text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
 }
 
-.links-container li a:hover {
+.nav-link:hover {
     background-color: #ff3920;
     color: white;
-    padding: 10px 2px 6px;
+    padding: 10px 4px 6px;
     border-bottom: solid 3px black;
     text-shadow: none;
 }
@@ -61,7 +61,7 @@ nav {
 .auth-btn:hover {
     color: #ff3920;
     cursor: pointer;
-    border-bottom: solid 4px black;
+    border-bottom: solid 3px black;
     padding: 5px 8px 11px;
 }
 
@@ -73,12 +73,13 @@ nav {
     color: white;
     padding: 11px 5px 11px;
     margin-left: 10px;
+    text-decoration: none;
 }
 
 .sign-btn:hover {
     cursor: pointer;
     background-color: white;
-    border-bottom: solid 4px black;
+    border-bottom: solid 3px black;
     color: black;
     padding: 11px 5px 10px;
 }
@@ -120,7 +121,7 @@ nav {
     z-index: 5;
 }
 
-.dropdown-list li a {
+.dropdown-list-link {
     text-align: left;
     display: block;
     font-size: 20px;
@@ -130,7 +131,15 @@ nav {
     padding: 7px 0 7px 10px;
 }
 
-.dropdown-list li a:hover {
+.dropdown-list-link:hover {
     background-color: #ff3920;
     color: white;
+}
+
+.active-link {
+    background-color: #ff3920;
+    color: white;
+    padding: 10px 4px 6px;
+    border-bottom: solid 3px black;
+    text-shadow: none;
 }

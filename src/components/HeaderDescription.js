@@ -4,41 +4,55 @@ import 'bootstrap/dist/css/bootstrap.css';
 import $ from 'jquery';
 
 export default class HeaderDescription extends Component {
-    onArrowClick(event) {
-        let arrow = event.target;
-        if ($(arrow).hasClass('arrow-left')) {
-
-        }
-    }
-
-    componentWillMount() {
-        const contentArr = ['Реєструйся у системі ведення блогів', 'Створюй свої блоги та розвивай свій контент', 'Спілкуйся з іншими користувачами та здобувай підписників'];
-        this.listElements = contentArr.map((text, index) => {
-            return <li key={index}>
-                {text}
-            </li>
-        })
+    constructor(props) {
+        super(props);
+        this.state = {
+            currentIndex: 0
+        };
+        this.onArrowClick = this.onArrowClick.bind(this);
     }
 
     componentDidMount() {
-        $(this.list).children().first().css('display', 'block');
+        $(this.sliderContent).fadeIn(600);
+    }
+
+    componentWillUpdate() {
+        $(this.sliderContent).hide();
+
+    }
+
+    componentDidUpdate() {
+        $(this.sliderContent).fadeIn(600);
+    }
+
+    onArrowClick(event) {
+        let arrow = event.target;
+        let textArr = this.props.description;
+        if ($(arrow).hasClass('arrow-left')) {
+            if (this.state.currentIndex === 0) {
+                this.setState({currentIndex: textArr.length - 1});
+            } else {
+                this.setState({currentIndex: this.state.currentIndex - 1})
+            }
+        } else {
+            if (this.state.currentIndex === (textArr.length - 1)) {
+                this.setState({currentIndex: 0});
+            } else {
+                this.setState({currentIndex: this.state.currentIndex + 1})
+            }
+        }
     }
 
     render() {
-        const onArrowClick = (event) => {
-            const binded = this.onArrowClick.bind(this);
-            return binded(event);
-        };
         return <div className="header-app-description">
             <span className="glyphicon glyphicon-menu-left header-arrow arrow-left"
-                  onClick={ onArrowClick }></span>
+                  onClick={ this.onArrowClick }></span>
             <div className="header-slider">
-                <ul className="slider-list" ref={(ul => this.list = ul)}>
-                    {this.listElements}
-                </ul>
+                <span className="slider-content"
+                      ref={(span) => this.sliderContent = span}>{this.props.description[this.state.currentIndex]}</span>
             </div>
             <span className="glyphicon glyphicon-menu-right header-arrow arrow-right"
-                  onClick={ onArrowClick }></span>
+                  onClick={ this.onArrowClick }></span>
         </div>
     }
 }

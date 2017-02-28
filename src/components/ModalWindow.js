@@ -20,14 +20,14 @@ export default class ModalWindow extends Component {
         else {
             this.closeModalWindow();
             this.props.authUser(login, password);
+            window.localStorage.setItem('login', login);
         }
     }
 
     render() {
         console.log('ModalWindow rendered');
-        const isVisible = this.props.visibility;
 
-        return <div className={isVisible ? "modal-container display-block" : "display-none"}
+        return <div className="modal-container display-block"
             /*onClick={this.closeModalWindow.bind(this, event)}*/ ref={(div) => this.modalContainer = div}>
             <div className="modal-window" ref={(div) => this.modalWindow = div}>
                 <div className="window-header">
@@ -52,7 +52,6 @@ export default class ModalWindow extends Component {
 }
 
 ModalWindow.propTypes = {
-    visibility: React.PropTypes.bool.isRequired,
     closeModalWindow: PropTypes.func.isRequired,
     authUser: PropTypes.func.isRequired
 };

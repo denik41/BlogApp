@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import '../style/Navbar.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import $ from 'jquery';
+import { Link } from 'react-router';
 
 export default class Navbar extends Component {
 
@@ -27,28 +28,39 @@ export default class Navbar extends Component {
         const { user } = this.props;
         const dropdown = (
             <ul className="dropdown-list" ref={(ul) => this.dropdown = ul}>
-                <li><a href="">Профіль</a></li>
-                <li><a href="">Мої твори</a></li>
-                <li><a href="">Вийти</a></li>
+                <li><Link to="/profile" className="dropdown-list-link">Профіль</Link></li>
+                <li><Link to="/compositions" className="dropdown-list-link">Мої твори</Link></li>
+                <li><Link to="/logout" className="dropdown-list-link">Вийти</Link></li>
             </ul>
         );
 
         const onUserUnauth =
             <div className="buttons-block">
                 <span className="auth-btn" onClick={this.onEntryBtnClick.bind(this)}>Увійти</span>
-                <a className="sign-btn">Реєстрація</a>
+                <Link to="/reg" className="sign-btn">Реєстрація</Link>
             </div>;
 
         const dropdownIcon = <span className="dropdown-title glyphicon glyphicon-user"
                                    onClick={this.onDropdownClick.bind(this)}
                                    ref={(span) => this.dropdownIcon = span}></span>;
 
+        const links = this.props.navBarLinks.map((link, index) => {
+                if (link.link === "/") {
+                    return <li key={index}>
+                        <Link to={link.link} onlyActiveOnIndex={true} activeClassName="active-link"
+                              className="nav-link">{link.title}</Link>
+                    </li>
+                }
+                return <li key={index}>
+                    <Link to={link.link} activeClassName="active-link" className="nav-link">{link.title}</Link>
+                </li>
+            }
+        );
+
         return (
             <nav>
                 <ul className="links-container">
-                    <li><a href="/">Головна</a></li>
-                    <li><a href="/about">Про нас</a></li>
-                    <li><a href="/blogers">Автори</a></li>
+                    {links}
                 </ul>
                 <div className="user-block">
                     <span className="user-greeting">Hello, {user.login ? user.login : 'Guest'}</span>
