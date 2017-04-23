@@ -4,13 +4,14 @@ const initialState = [
         link: '/'
     },
     {
-        title: 'Про нас',
-        link: '/about'
+        title: 'Твори',
+        link: '/compositions'
     },
     {
         title: 'Автори',
-        link: '/authors'
-    }];
+        link: '/users'
+    }
+];
 
 export default function navBarLinks(state = initialState) {
     return state;

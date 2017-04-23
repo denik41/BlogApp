@@ -1,5 +1,5 @@
 .reg-page {
-    background-image: url("../images/reg-back.jpg");
+    background-image: url("/images/reg-back.jpg");
     background-size: cover;
     background-attachment: fixed;
     flex-grow: 1;
@@ -43,6 +43,7 @@
     font-size: 22px;
     border: solid 2px #ff3920;
     padding: 3px 5px;
+    flex-basis: 350px;
 }
 
 .reg-form-input-text:focus {
@@ -57,6 +58,8 @@
     resize: none;
     border: solid 2px #ff3920;
     padding: 3px 5px;
+    flex-basis: 350px;
+    flex-shrink: 1;
 }
 
 .reg-form-textarea:focus {

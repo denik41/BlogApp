@@ -1,13 +1,9 @@
-.home-container {
-
-}
-
 .popular-compositions-title {
     text-align: center;
-    border-top: solid darkred 2px;
-    border-bottom: solid darkred 2px;
-    color: darkred;
-    margin: 20px auto;
+    border-top: solid black 2px;
+    border-bottom: solid black 2px;
+    color: black;
+    margin: 20px auto 0;
     font-size: 28px;
     padding: 10px 0;
     display: block;
@@ -15,7 +11,8 @@
 }
 
 .popular-compositions-container {
-    border: solid black 2px;
-    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto 20px;
     width: 70%;
 }

@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import '../style/HeaderDescription.css';
-import 'bootstrap/dist/css/bootstrap.css';
 import $ from 'jquery';
 
 export default class HeaderDescription extends Component {
@@ -45,14 +44,14 @@ export default class HeaderDescription extends Component {
 
     render() {
         return <div className="header-app-description">
-            <span className="glyphicon glyphicon-menu-left header-arrow arrow-left"
-                  onClick={ this.onArrowClick }></span>
+            <span className="header-arrow arrow-left"
+                  onClick={ this.onArrowClick }>&lsaquo;</span>
             <div className="header-slider">
                 <span className="slider-content"
                       ref={(span) => this.sliderContent = span}>{this.props.description[this.state.currentIndex]}</span>
             </div>
-            <span className="glyphicon glyphicon-menu-right header-arrow arrow-right"
-                  onClick={ this.onArrowClick }></span>
+            <span className="header-arrow arrow-right"
+                  onClick={ this.onArrowClick }>&rsaquo;</span>
         </div>
     }
 }

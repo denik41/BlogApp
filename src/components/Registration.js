@@ -1,10 +1,17 @@
 import React, { Component } from 'react';
 import '../style/Registration.css';
+import $ from 'jquery';
 
 export default class Registration extends Component {
 
-    onSubmit() {
-        console.log('adfadsf');
+    onSubmit(event) {
+        event.preventDefault();
+        const data = $(this.form).serialize();
+        $.post('/reg', data, (data, status, xhr) => {
+            console.log(data);
+            console.log(status);
+            console.log(xhr);
+        });
     }
 
     render() {
@@ -17,19 +24,25 @@ export default class Registration extends Component {
                     обов'язкові для заповнення.
                 </p>
                 <div>
-                    <label>*Ім'я:<input type="text" className="reg-form-input-text" placeholder="Ім'я" required
-                                        form="reg-form" name="firstName"/></label>
-                    <label>*Прізвище:<input type="text" className="reg-form-input-text" placeholder="Прізвище" required
-                                            form="reg-form" name="secondName"/></label>
-                    <label>*Логін:<input type="text" className="reg-form-input-text" placeholder="Логін" required
-                                         form="reg-form" name="login"/></label>
-                    <label>*E-mail:<input type="email" className="reg-form-input-text" placeholder="E-mail" required
-                                          form="reg-form" name="email"/></label>
-                    <label>Про себе:<textarea className="reg-form-textarea" autoComplete="off" maxLength="1000"
-                                              form="reg-form" name="aboutSelf"/></label>
-                    <label>Посилання на соц. мережі:<textarea className="reg-form-textarea" maxLength="500"
-                                                              form="reg-form" name="socialsLinks"/></label>
-                    <button type="submit" className="reg-form-sign-btn" form="reg-form" onSubmit={this.onSubmit}>Sign in</button>
+                    <form id="regForm" onSubmit={this.onSubmit.bind(this)} ref={(form) => this.form = form} >
+                        <label>*Ім'я:<input type="text" className="reg-form-input-text" placeholder="Ім'я" required
+                                            form="regForm" name="firstName" maxLength="50"/></label>
+                        <label>*Прізвище:<input type="text" className="reg-form-input-text" placeholder="Прізвище"
+                                                required
+                                                form="regForm" name="secondName" maxLength="40"/></label>
+                        <label>*Логін:<input type="text" className="reg-form-input-text" placeholder="Логін" required
+                                             form="regForm" name="login" maxLength="40"/></label>
+                        <label>*E-mail:<input type="email" className="reg-form-input-text" placeholder="E-mail" required
+                                              form="regForm" name="email" maxLength="100"/></label>
+                        <label>Про себе:<textarea className="reg-form-textarea" autoComplete="off" maxLength="1000"
+                                                  form="regForm" name="aboutSelf" /></label>
+                        <label>Посилання на соц. мережі:<textarea className="reg-form-textarea" maxLength="500"
+                                                                  form="regForm" name="socialsLinks"/></label>
+                        <label>*Пароль:<input type="password" className="reg-form-input-text" placeholder="Пароль"
+                                              required
+                                              form="regForm" name="password" maxLength="50"/></label>
+                        <button type="submit" className="reg-form-sign-btn" form="regForm">Реєстрація</button>
+                    </form>
                 </div>
             </div>
         </div>

@@ -1,0 +1,21 @@
+{
+  "session" : {
+    "secret": "blogapp",
+    "key": "sid",
+    "cookie": {
+      "path": "/",
+      "httpOnly": true,
+      "maxAge": null
+    }
+  },
+  "mongoose": {
+    "uri": "mongodb://localhost/blogapp",
+    "options": {
+      "server": {
+        "socketOptions": {
+          "keepAlive": 1
+        }
+      }
+    }
+  }
+}

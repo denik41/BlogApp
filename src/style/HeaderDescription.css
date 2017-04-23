@@ -3,7 +3,7 @@
     width: auto;
     height: 350px;
     border-bottom: solid 2px black;
-    background-image: url("../images/header-background.jpg");
+    background-image: url("/images/header-background.jpg");
     background-size: cover;
 }
 
@@ -19,7 +19,6 @@
 }
 
 .header-arrow:hover {
-    background-color: rgba(202, 191, 182, 0.4);
     cursor: pointer;
 }
 

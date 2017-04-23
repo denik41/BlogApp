@@ -18,13 +18,16 @@ export default class ModalWindow extends Component {
             this.errSpan.textContent = 'Не введено логін або пароль!';
         }
         else {
-            this.closeModalWindow();
             this.props.authUser(login, password);
+            this.closeModalWindow();
             window.localStorage.setItem('login', login);
         }
     }
 
     render() {
+        if (!this.props.isVisible) {
+            return null;
+        }
         console.log('ModalWindow rendered');
 
         return <div className="modal-container display-block"

@@ -1,12 +1,9 @@
 footer {
-    height: 100px;
-    border-top: solid 15px darkred;
-    border-bottom: solid 2px darkred;
+    height: 120px;
+    border-top: solid 2px #cf321d;
     margin-top: auto;
     display: flex;
-    background: #e5f3e8;
-    background: -webkit-linear-gradient(to left, #e5f3e8 , #c7ada7);
-    background: linear-gradient(to left, #e5f3e8 , #c7ada7);
+    background: white;
 }
 
 .about-block {
@@ -37,12 +34,12 @@ footer {
 .links-block ul li a {
     text-decoration: underline;
     color: black;
+    font-weight: bold;
 }
 
 .links-block ul li a:hover {
     text-decoration: underline;
     color: darkred;
-    font-weight: bold;
 }
 
 .copyright {
@@ -55,5 +52,4 @@ footer {
 .copyright span {
     font-size: 20px;
     color: darkred;
-
 }

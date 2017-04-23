@@ -10,11 +10,14 @@ import thunk from 'redux-thunk';
 
 import App from './containers/App';
 import Home from './components/Home';
-import About from './components/About';
 import NotFound from './components/NotFound';
 import Registration from './components/Registration';
+import Composition from './components/Composition';
+import Profile from './components/Profile';
+import Compositions from './components/Compositions';
+import Users from './components/Users';
 
-import { Router, Route, IndexRoute, browserHistory } from 'react-router';
+import { Router, Route, IndexRoute, browserHistory, hashHistory } from 'react-router';
 
 const store = createStore(reducers, composeWithDevTools(applyMiddleware(thunk)));
 
@@ -23,8 +26,11 @@ ReactDOM.render(
         <Router history={browserHistory}>
             <Route path="/" component={App}>
                 <IndexRoute component={Home}/>
-                <Route path="/about" component={About} />
-                <Route path="/reg" component={Registration} />
+                <Route path="compositions" component={Compositions} />
+                <Route path="reg" component={Registration} />
+                <Route path="compositions/:id" component={Composition} />
+                <Route path="users/:id" component={Profile} />
+                <Route path="users" component={Users} />
 
                 <Route path="*" component={NotFound}/>
             </Route>

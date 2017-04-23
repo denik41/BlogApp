@@ -5,16 +5,19 @@ import ModalWindow from '../components/ModalWindow';
 import Footer from '../components/Footer';
 import { connect } from 'react-redux';
 
+import { bindActionCreators } from 'redux';
+import { showModalWindow, hideModalWindow } from '../actions/modalWindowActions';
+import { authUser, unAuthUser } from '../actions/userActions';
+
 class App extends Component {
     render() {
-        const modalWindow = <ModalWindow closeModalWindow={this.props.closeModalWindow}
-                                         authUser={this.props.authUser}/>;
-
+        console.log('App rendered');
         return (
             <div className="app-container">
-                {this.props.modalWindowIsVisible ? modalWindow : ''}
+                <ModalWindow isVisible={this.props.modalWindowIsVisible} closeModalWindow={this.props.closeModalWindow}
+                             authUser={this.props.authUser} />
                 <Navbar user={this.props.user} onEntryBtnClick={this.props.onEntryBtnClick}
-                        navBarLinks={this.props.navBarLinks}/>
+                        navBarLinks={this.props.navBarLinks} onLogOutClick={this.props.unAuthUser} />
                 <div className="page-container">
                     {this.props.children}
                 </div>
@@ -32,24 +35,16 @@ export default connect(
     }),
     dispatch => ({
         onEntryBtnClick: () => {
-            dispatch({
-                type: 'SHOW_MODAL_WINDOW'
-            })
+            dispatch(showModalWindow());
         },
         closeModalWindow: () => {
-            dispatch({
-                type: 'CLOSE_MODAL_WINDOW'
-            })
+            dispatch(hideModalWindow());
         },
         authUser: (login, pass) => {
-            const user = {
-                login: login,
-                password: pass
-            };
-            dispatch({
-                type: 'AUTH_USER',
-                payload: user
-            })
+            dispatch(authUser(login, pass));
+        },
+        unAuthUser: () => {
+            dispatch(unAuthUser());
         }
     })
 )(App);

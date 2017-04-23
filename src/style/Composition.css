@@ -1,0 +1,115 @@
+.composition-container-shadow {
+    box-shadow: 2px 4px 10px 6px rgba(0, 0, 0, 0.25);
+}
+
+.composition-header {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: solid rgba(0, 0, 0, 0.25) 1px;
+}
+
+.composition-title {
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+}
+
+.composition-title span {
+    font-size: 20px;
+    font-weight: bold;
+    color: #0f0f0f;
+    text-align: center;
+}
+
+.composition-title a {
+    font-size: 20px;
+    font-weight: bold;
+    color: #0f0f0f;
+    text-decoration: underline;
+    text-align: center;
+}
+
+.composition-title a:hover {
+    cursor: pointer;
+    color: #5f6b69;
+}
+
+.composition-body {
+    display: inline-block;
+    padding: 5px 15px 15px;
+    white-space: pre-wrap;
+}
+
+.composition-author {
+    display: flex;
+    align-items: center;
+    padding: 0 15px;
+}
+
+.composition-author span:first-child {
+    white-space: pre-wrap;
+}
+
+.composition-author a:last-child {
+    text-decoration: underline;
+    color: black;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.composition-author a:last-child:hover {
+    cursor: pointer;
+    font-size: 19px;
+}
+
+.composition-likes {
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px 15px 3px;
+}
+
+.composition-likes span {
+    font-weight: bold;
+    color: #252594;
+}
+
+.composition-likes span:hover {
+    cursor: pointer;
+    color: #00c1ff;
+}
+
+.composition-publish-date {
+    display: flex;
+    justify-content: flex-end;
+    padding: 3px 15px 5px 0;
+}
+
+.composition-publish-date span {
+    font-size: 14px;
+    color: #9faeac;
+    font-style: italic;
+}
+
+.composition-page-body {
+    width: 90%;
+    min-width: 325px;
+    display: flex;
+    flex-direction: column;
+}
+
+.composition-page-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.composition-read-more {
+    color: #4b617d;
+    text-decoration: underline;
+}
+
+.composition-read-more:hover {
+    cursor: pointer;
+    color: #90b5ce;
+}
